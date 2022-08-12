@@ -2,7 +2,7 @@ package clases;
 
 import java.util.Scanner;
 
-public class ClasePadre_Abstracta {
+public abstract class ClasePadre_Abstracta {
 
 	protected int transacciones, retiro, deposito;
 	private static int saldo;
@@ -29,21 +29,42 @@ public class ClasePadre_Abstracta {
 					System.out.print("----------------------------------------------------");
 				}
 			} while (bandera == 0);
-			
+
 			if (seleccion == 1) {
-				
+
 			} else if (seleccion == 2) {
-				
+
 			} else if (seleccion == 3) {
-				
+
 			} else if (seleccion == 4) {
 				System.out.println("-----------------------");
 				System.out.println("Gracias, vuelva pronto!");
 				System.out.println("-----------------------");
-				
+
 			}
 		} while (bandera != 2);
 
 	}
-}
+	
+//	Metodo para solicitar cantidad de retiro
+	public void retiro() {
+		retiro = entrada.nextInt();
+	}
+	
+//	Metodo para solicitar deposito
+	public void deposito() {
+		deposito = entrada.nextInt();
+	}
+	
+//	Metodo abstracto
+	public abstract void Transacciones();
+	
+//	Metodos setter y getter
+	public int getSaldo() {
+		return saldo;
+	}
+	
+	public void setSaldo(int saldo) {
+		this.saldo = saldo;
+	}
 }
